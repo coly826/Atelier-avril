@@ -1,0 +1,34 @@
+main{
+    display: grid;
+    /*grid-template-areas*/
+    grid-template-areas: "head head head"
+    "Sid content content" "foot foot foot";
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+}
+header{
+grid-area:head;
+background-color: red;
+width: 1000px;
+}
+article{
+grid-area: content;
+background-color: orange;
+width: 600px;
+height: 100vb;
+grid-column-start: 1;
+
+}
+aside{
+    grid-area: side;
+    background-color: green;
+    width: 1000px;
+    height: 100vb;
+}
+footer{
+    grid-area: foot;
+    background-color: yellow;
+    width: 600px;
+    height: 100vb;
+    grid-column-start: 2;
+    justify-items: start;
+}

@@ -1,0 +1,13 @@
+.grid_content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+   
+    gap: 10px;
+}
+
+.grid_item img{
+  height: 10em;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+}

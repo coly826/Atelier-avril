@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horloge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        .clock {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#date {
+    font-size: 24px;
+}
+
+#time {
+    font-size: 48px;
+}
+    </style>
+    <div class="clock">
+        <div id="date">date</div>
+        <div id="time">heures</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    function updateTime() {
+    const now = new Date();
+    const dateElement = document.getElementById('date');
+    const timeElement = document.getElementById('time');
+
+    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+
+    dateElement.textContent = now.toLocaleDateString('fr-FR', dateOptions);
+    timeElement.textContent = now.toLocaleTimeString('fr-FR', timeOptions);
+}
+updateTime(); // Appel initial pour afficher l'heure actuelle
+
+// Actualisation de l'heure chaque seconde
+setInterval(updateTime, 1000);
+</script>
